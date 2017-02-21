@@ -1,0 +1,20 @@
+<?php
+
+$idUser = $this->idUser;
+$urlAction = $this->url('application/default', array ('controller'=>'User','action'=>'send', 'id'=>$idUser));
+
+?>
+
+<h2> Contacter </h2>
+
+<form method='post' name='contacter/' id='contactForm' action='<?php echo $urlAction; ?>'>
+    <label>Nom:</label> 
+    <input type='text' name='nom' required> <br>
+    <label>Email:</label> 
+    <input type='text' name='email' required> <br>
+    <label>Telephone:</label> 
+    <input type='text' name='telephone' required> <br>
+    <label>Message:</label>    
+    <textarea rows='8' name='message' required></textarea> <br><br>
+    <button type='submit'>Envoyer</button>
+</form>

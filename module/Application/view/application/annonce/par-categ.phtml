@@ -1,0 +1,15 @@
+<?php
+
+$annonces = $this->listeAnnonces;
+$listePhotos = $this->listePhotos;
+$idCateg = $this->idCateg;
+
+echo "<table id='tableMesAnnonces'><tr><th>Photo</th><th>Nom</th><th>Prix</th><th>Catégorie</th></tr>";
+for ($i=0;$i<count($annonces);$i++){
+    echo "<tr><td><a href='/application/annonce/afficher/" . $annonces[$i]->getId() . "'><img src=" . $this->basePath('images/'.$listePhotos[$i]) . " alt='' width='200px' height='auto'></a></td>";
+    echo "<td><a href='/application/annonce/afficher/" . $annonces[$i]->getId() . "'>".$annonces[$i]->getNom(). "</a></td>";
+    echo "<td>".$annonces[$i]->getPrix() . "</td>";
+    echo "<td>" . $idCateg . "</td></tr>";
+}
+echo "</table>";
+

@@ -1,0 +1,22 @@
+<?php
+
+$listeAnnonces = $this->mesAnnonces;
+$listeCategories = $this->listeCategories;
+$listePhotos = $this->listePhotos;
+$categoryParAnnonce = $this->categoryParAnnonce;
+
+
+echo "<a href='/application/annonce/creer'><button>Ajouter un annonce</button></a>";
+
+echo "<table id='tableMesAnnonces'><tr><th>Photo</th><th>Nom</th><th>Prix</th><th>Catégorie</th><th></th><th></th></tr>";
+for ($i=0;$i<count($listeAnnonces);$i++){
+    echo "<tr><td><a href='/application/annonce/afficher/" . $listeAnnonces[$i]->getId() . "'><img src=" . $this->basePath('images/'.$listePhotos[$i]) . " alt='' width='200px' height='auto'></a></td>";
+    echo "<td><a href='/application/annonce/afficher/" . $listeAnnonces[$i]->getId() . "'>".$listeAnnonces[$i]->getNom(). "</a></td>";
+    echo "<td>".$listeAnnonces[$i]->getPrix() . "</td>";
+    $idCat = $listeAnnonces[$i]->getIdCategory();
+    echo "<td>" . $categoryParAnnonce[$i] . "</td>";
+    echo "<td><a href='/application/annonce/modifier/" . $listeAnnonces[$i]->getId() . "'>Modifier</a></td>";
+    echo "<td><a href='/application/annonce/effacer/" . $listeAnnonces[$i]->getId() . "'>Effacer</a></td></tr>";
+}
+echo "</table>";
+

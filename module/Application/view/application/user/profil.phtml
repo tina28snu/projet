@@ -1,0 +1,44 @@
+<div  id="floatLeft"><h1>Profil</h1> <br> <br>
+
+<table>
+    <tr>
+        <td>
+            Nom: <?php echo $_SESSION['user']['Nom']; ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Prenom: <?php echo $_SESSION['user']['Prenom']; ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Email: <?php echo $_SESSION['user']['Email']; ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Téléphone: <?php echo $_SESSION['user']['Telephone']; ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Adresse: <?php echo $_SESSION['user']['Adresse']; ?>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mot de Passe: **********
+        </td>
+    </tr>
+</table></div>
+
+<div id="floatRight"><h3>Changer les données</h3><br>
+
+<form action="update" method="post" id="formChanger">
+    <label>Email:</label> <input type="email" name="email" class="email"><br><br>
+    <label>Téléphone:</label> <input type="text" name="telephone" class="telephone"><br><br>
+    <label>Adresse:</label> <input type="text" name="adresse" class="adresse"><br><br>
+    <label>Mot de Passe:</label> <input type="password" name="password" class="password"><br><br>
+    <input type="submit" value="Changer"><br><br>
+</form></div>

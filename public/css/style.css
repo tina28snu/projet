@@ -1,0 +1,144 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
+}
+
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
+}
+
+div.container a.brand {
+    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
+}
+
+.userForm {
+    border-collapse: collapse;
+}
+
+.userForm td {
+    text-align: center;
+    width: 40vw;
+}
+
+#annonceForm label {
+    width: 10vw;
+    padding-bottom: 1vh;
+}
+
+#annonceForm input, select, textarea {
+    width: 20vw;
+    border: 1px solid black;
+}
+
+#photo {
+    margin-left: 10vw;
+}
+
+#tableIndex td, th{
+    width: 20vw;
+    text-align: center;
+    border: 1px solid red;
+    padding: 1vw 1vh;
+}
+
+#tableIndex .firstTd {
+    vertical-align: top;
+}
+
+#tableIndex .firstTd, #tableIndex th:first-child{
+    border: 0px solid red;
+}
+
+#tableMesAnnonces {
+    margin-top: 2vh;
+}
+
+#tableMesAnnonces td {
+    width: 20vw;
+    text-align: center;
+    border: 1px solid red;
+    padding: 1vw 1vh;
+}
+
+#floatRight {
+    float: right;
+    margin-left: 20vw;
+    margin-right: 10vw;
+}
+
+#floatLeft {
+    float: left;
+}
+
+#clearFloat {
+    clear: both;
+    border-top: 1px solid black;
+    padding: 2vh 0;
+}
+ 
+#floatRight span {
+    color: white;
+    margin-right: 20vw;
+}
+
+#afficher tr:last-child td {
+    text-align: left;
+}
+
+#afficher td {
+    height: 40vh;
+    width: 40vw;
+    border: 1px solid red;
+    text-align: center;
+    padding: 2vh 2vw;
+    overflow-y: scroll;
+}
+
+#afficher tr:last-child td img {
+    padding: 0 1vw;
+}
+
+#contactForm label {
+    width: 10vw;
+    padding-bottom: 1vh;
+}
+
+#contactForm input, textarea {
+    width: 20vw;
+    border: 1px solid black;
+}
+
+#formChanger label {
+    width: 10vw;
+    padding-bottom: 1vh;
+}
+
+#formChanger input {
+    width: 15vw;
+    border: 1px solid black;
+}

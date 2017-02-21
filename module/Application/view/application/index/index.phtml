@@ -1,0 +1,26 @@
+<?php
+
+$listeAnnonces = $this->listeAnnonces;
+$listeCategories = $this->listeCategories;
+$listePhotos = $this->listePhotos;
+$categoryParAnnonce = $this->categoryParAnnonce;
+
+
+echo "<table id='tableIndex'><tr><th></th><th>Photo</th><th>Nom</th><th>Prix</th><th>Catégorie</th></tr><tr><td class='firstTd' rowspan='5'> <strong>Categories</strong><br><br>";
+foreach ($listeCategories as $category) {
+    echo "<a href='/application/annonce/parCateg/" . $category->getId() . "'>" . $category->getNom() . "</a><br>";
+}
+echo "</td>";
+
+for ($i=0;$i<5;$i++){
+    $j = count($listeAnnonces) - ($i + 1);
+    echo "<td>";
+    echo "<a href='/application/annonce/afficher/" . $listeAnnonces[$j]->getId() . "'><img src=" . $this->basePath('images/'.$listePhotos[$j]) . " alt='' width='200px' height='auto'></a>";
+    echo "</td>";
+    echo "<td><a href='/application/annonce/afficher/" . $listeAnnonces[$j]->getId() . "'>" . $listeAnnonces[$j]->getNom(). "</a></td>";
+    echo "<td>" . $listeAnnonces[$j]->getPrix() . "</td>";
+    $idCat = $listeAnnonces[$j]->getIdCategory();
+    echo "<td>" . $categoryParAnnonce[$j] . "</td></tr>";
+}
+echo "</table>";
+

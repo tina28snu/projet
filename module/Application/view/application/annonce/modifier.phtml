@@ -1,0 +1,53 @@
+<?php
+
+$annonce = $this->annonce;
+$listeCategories = $this->listeCategories;
+$photos = $this->photos;
+
+$urlAction = $this->url('application/default', array ('controller'=>'Annonce','action'=>'update', 'id'=>$annonce->getId()));
+
+?>
+
+<form method='post' id='annonceForm' action='<?php echo $urlAction; ?>' enctype="multipart/form-data">
+    <label>Nom:</label> 
+    <input type='text' name='nom' value='<?php echo $annonce->getNom(); ?>' required> <br>
+    <label>Catégorie:</label> 
+    <select name='categories'>
+    <?php
+    
+        foreach ($listeCategories as $categorie) {
+            if ($categorie->getId() == $annonce->getIdCategory()) {
+                echo "\n<option value='" . $categorie->getId() . "' selected>" . $categorie->getNom() . "</option>";
+            }
+            else {
+                echo "\n<option value='" . $categorie->getId() . "'>" . $categorie->getNom() . "</option>";
+            }
+        }
+    ?>
+    </select> <br>
+    <label>Description:</label> 
+    <textarea rows='8' name='description' required><?php echo $annonce->getDescription(); ?></textarea> <br><br>
+    <label>Prix:</label> 
+    <input type='text' name='prix'  value='<?php echo $annonce->getPrix() ?>'> <br>
+    <label>Photo:</label> 
+    <?php
+    foreach ($photos as $photo) {
+        echo "<input name='images[]' value='".$photo->getChemin()."' hidden>" . "<img src=" . $this->basePath('images/'.$photo->getChemin()) . " alt='' width='200px' height='auto'><button  type='button' class='effacerPhoto'>Effacer</button><br><br>";
+    }
+    ?>
+    <input type='file' name='photo[]' id='photo' >
+    <div id="buttonAdd"><button id="addPhoto" type="button">Ajouter photo</button></div><br>
+    <button type='submit' id="buttonSubmit" >Modifier</button>
+</form>
+
+<script>
+    $("#addPhoto").click(function (e) {
+        $("#photo:first").clone().insertBefore("#addPhoto");
+    });
+    
+    $(".effacerPhoto").click(function (e) {
+        $(this).prev().remove();
+        $(this).prev().attr('value', 'r'+$(this).prev().attr('value'));
+        $(this).remove();
+    });
+</script>

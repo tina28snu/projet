@@ -1,0 +1,18 @@
+<?php
+
+$annonce = $this->annonce;
+$user = $this->user;
+$photos = $this->photos;
+
+echo "<table id='afficher'>";
+
+echo "<tr><td><strong>" . $annonce->getNom() . "</strong><br><br>" . $annonce->getDescription() . "<br><br> Prix: " . $annonce->getPrix() . " euro </td>";
+echo "<td> Vendeur: <br><br>" . $user->getPrenom() . " " . $user->getNom() . "<br><br><a href='/application/user/contacter/" . $user->getId() . "'>Contacter</a></td></tr>";
+
+echo "<tr><td colspan='2'>";
+foreach ($photos as $photo) {
+    echo "<img src=" . $this->basePath('images/'.$photo->getChemin()) . " alt='' width='200px' height='auto'>";
+}
+
+echo "</td></tr></table>";
+

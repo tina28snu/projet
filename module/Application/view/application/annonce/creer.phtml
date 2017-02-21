@@ -1,0 +1,30 @@
+
+<h2> Ajouter une annonce </h2>
+
+<form method='post' name='annonce' id='annonceForm' action='ajouter' enctype="multipart/form-data">
+    <label>Nom:</label> 
+    <input type='text' name='nom' required> <br>
+    <label>Catégorie:</label> 
+    <select name='categories'>
+    <?php
+        foreach ($this->listeCategories as $categorie) {
+            echo "\n<option value='" . $categorie->getId() . "'>" . $categorie->getNom() . "</option>";
+        }
+    ?>
+    </select> <br>
+    <label>Description:</label> 
+    <textarea rows='8' name='description' required></textarea> <br><br>
+    <label>Prix:</label> 
+    <input type='text' name='prix'> <br>
+    <label>Photo:</label> 
+    <input type='file' name='photo[]' id='photo'>
+    <div id="buttonAdd"><button id="addPhoto" type="button">Ajouter photo</button></div><br>
+    <button type='submit'>Ajouter</button>
+</form>
+
+
+<script>
+    $("#addPhoto").click(function (e) {
+        $("#photo:first").clone().insertBefore("#addPhoto");
+    });
+</script>
